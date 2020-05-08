@@ -11,9 +11,11 @@ namespace ShareITAPI.Interfaces
     {
         Posts AddPost(PostDto postDto, Posts post);
 
-        UserPostsDto GetPostById(int id);
+        UserPostsDto GetPostById(int id, UserPostsDto postDto);
 
-        List<UserPostsDto> GetPostsForUser(int id);
+        List<UserPostsDto> GetProfilePosts(int userId, List<UserPostsDto> userPostsDto);
+
+        List<UserPostsDto> GetPostsForUser(List<int> usersId, List<UserPostsDto> userPostsDto);
 
         void DeletePost(int id);
     }

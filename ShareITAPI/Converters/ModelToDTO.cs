@@ -1,6 +1,8 @@
 ﻿using ShareITAPI.Models;
 using ShareITAPI.ModelsDTO;
 using ShareITAPI.ModelsDTO.CommentsDTO;
+using ShareITAPI.ModelsDTO.FriendsDTO;
+using ShareITAPI.ModelsDTO.RequestsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,6 +92,24 @@ namespace ShareITAPI.Converters
             userToDto.IsOnline = user.IsOnline;
 
             return userToDto;
+        }
+
+        public static FriendRequestDto ConvertRequestToDto(FriendRequests request,FriendRequestDto requestDto)
+        {
+            requestDto.Id = request.Id;
+            requestDto.FromUser = ConvertSingleUserToDto(request.FromUser);
+            requestDto.ToUserId = request.UserId;
+            requestDto.Seen = request.Seen;
+
+            return requestDto;
+        }
+
+        public static FriendsDto ConvertFriendToDto(Friends friend, FriendsDto friendDto)
+        {
+            friendDto.UserId = friend.UserId;
+            friendDto.Friend = ConvertSingleUserToDto(friend.Friend);
+
+            return friendDto;
         }
 
     }

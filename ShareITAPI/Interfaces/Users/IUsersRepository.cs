@@ -8,6 +8,6 @@ namespace ShareITAPI.Interfaces
 {
     public interface IUsersRepository : IBaseRepository<Users>
     {
-
+        List<Users> GetAllInclude();
     }
 }

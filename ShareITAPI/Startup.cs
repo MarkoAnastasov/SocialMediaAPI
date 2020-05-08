@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ShareITAPI.Interfaces;
 using ShareITAPI.Interfaces.FriendRequest;
+using ShareITAPI.Interfaces.FriendsInterface;
 using ShareITAPI.Models;
 using ShareITAPI.Repositories;
 using ShareITAPI.Services;
@@ -48,6 +49,8 @@ namespace ShareITAPI
             services.AddScoped<ICommentsService, CommentsService>();
             services.AddScoped<IFriendRequestsRepository, FriendRequestsRepository>();
             services.AddScoped<IFriendRequestsService, FriendRequestsService>();
+            services.AddScoped<IFriendsRepository, FriendsRepository>();
+            services.AddScoped<IFriendsService, FriendsService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

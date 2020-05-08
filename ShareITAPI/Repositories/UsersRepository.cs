@@ -11,27 +11,18 @@ namespace ShareITAPI.Repositories
     public class UsersRepository : BaseRepository<Users> , IUsersRepository
     {
 
-        private readonly DB_A57889_shareITContext _context = new DB_A57889_shareITContext();
+        private readonly DB_A57889_shareITContext _context;
 
         public UsersRepository(DB_A57889_shareITContext context) : base(context)
         {
-            
+            _context = context;
         }
 
         public List<Users> GetAllInclude()
         {
             return _context.Users
-                             .Include(x => x.Comments)
-                             .Include(x => x.FriendRequestsFromUser)
-                             .Include(x => x.FriendRequestsUser)
                              .Include(x => x.FriendsFriend)
                              .Include(x => x.FriendsUser)
-                             .Include(x => x.Likes)
-                             .Include(x => x.MessagesFromUser)
-                             .Include(x => x.MessagesToUser)
-                             .Include(x => x.NotificationsFromUsed)
-                             .Include(x => x.NotificationsUser)
-                             .Include(x => x.Posts)
                              .ToList();
         }
     }

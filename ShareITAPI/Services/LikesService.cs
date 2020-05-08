@@ -21,11 +21,10 @@ namespace ShareITAPI.Services
 
         public void AddLike(AddLikeDto like)
         {
-            var likes = _likesRepository.GetAll();
-
             var addLike = new Likes();
 
-            var existingLike = likes.FirstOrDefault(x => x.UserId == like.UserId && x.PostId == like.PostId);
+            var existingLike = _likesRepository.GetFirstWhere(x => x.UserId == like.UserId && x.PostId == like.PostId);
+
             if(existingLike != null)
             {
                 throw new FlowException("Like already exists!");
@@ -38,9 +37,8 @@ namespace ShareITAPI.Services
 
         public void DeleteLike(int userId, int postId)
         {
-            var likes = _likesRepository.GetAll();
+            var targetLike = _likesRepository.GetFirstWhere(x => x.UserId == userId && x.PostId == postId);
 
-            var targetLike = likes.FirstOrDefault(x => x.UserId == userId && x.PostId == postId);
             if(targetLike == null)
             {
                 throw new FlowException("Like not found!");

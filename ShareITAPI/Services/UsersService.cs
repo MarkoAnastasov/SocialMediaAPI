@@ -32,7 +32,7 @@ namespace ShareITAPI.Services
         {
             var requestedUser = _usersRepository.GetById(id);
 
-            if(targetUser == null)
+            if(requestedUser == null)
             {
                 throw new FlowException("User not found!");
             }
@@ -44,9 +44,8 @@ namespace ShareITAPI.Services
 
         public void RegisterUser(RegisterUserDto user)
         {
-            var users = _usersRepository.GetAll();
+            var existingUser = _usersRepository.GetFirstWhere(x => x.Email.ToLower().Trim() == user.Email.ToLower().Trim());
 
-            var existingUser = users.FirstOrDefault(x => x.Email.ToLower().Trim() == user.Email.ToLower().Trim());
             if(existingUser != null)
             {
                 throw new FlowException("User with this e-mail already exists!");
@@ -63,8 +62,7 @@ namespace ShareITAPI.Services
 
         public UserDto ReturnCreatedUser(RegisterUserDto user)
         {
-            var users = _usersRepository.GetAll();
-            var createdUser = users.FirstOrDefault(x => x.Email == user.Email);
+            var createdUser = _usersRepository.GetFirstWhere(x => x.Email == user.Email);
             var usersList = new List<Users>() { createdUser };
             var usersDto = ModelToDTO.ConvertUsersToDto(usersList);
             var createdUserDto = usersDto.FirstOrDefault(x => x.Id == createdUser.Id);
@@ -74,8 +72,8 @@ namespace ShareITAPI.Services
 
         public AccessToken UserLogin(string email, string password, AccessToken accessToken)
         {
-            var users = _usersRepository.GetAll();
-            var requestedUser = users.FirstOrDefault(x => x.Email.ToLower().Trim() == email.ToLower().Trim() && x.Password == password);
+            var requestedUser = _usersRepository.GetFirstWhere(x => x.Email.ToLower().Trim() == email.ToLower().Trim() && x.Password == password);
+
             if(requestedUser == null)
             {
                 throw new FlowException("Incorrect e-mail or password!");
@@ -91,15 +89,14 @@ namespace ShareITAPI.Services
 
         public UserDto UserAccess(string token,string email, UserDto accessUserDto)
         {
-            var users = _usersRepository.GetAll();
-            var requestedUser = users.FirstOrDefault(x => x.AccessToken == token && x.Email == email);
-            var usersList = new List<Users>() { requestedUser };
+            var requestedUser = _usersRepository.GetFirstWhere(x => x.AccessToken == token && x.Email == email);
             
             if (requestedUser == null)
             {
                 throw new FlowException("User not found!");
             }
 
+            var usersList = new List<Users>() { requestedUser };
             var usersDto = ModelToDTO.ConvertUsersToDto(usersList);
             accessUserDto = usersDto.FirstOrDefault(x => x.Id == requestedUser.Id);
 

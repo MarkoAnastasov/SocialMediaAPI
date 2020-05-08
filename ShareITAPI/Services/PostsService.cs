@@ -38,12 +38,10 @@ namespace ShareITAPI.Services
             return post;
         }
 
-        public UserPostsDto GetPostById(int id)
+        public UserPostsDto GetPostById(int id, UserPostsDto postDto)
         {
-            var posts = _postsRepository.GetAllInclude();
+            var post = _postsRepository.GetFirstInclude(x => x.Id == id);
 
-            var post = posts.FirstOrDefault(x => x.Id == id);
-            var postDto = new UserPostsDto();
             var postList = new List<Posts>();
 
             if(post == null)
@@ -57,13 +55,30 @@ namespace ShareITAPI.Services
             return postDto;
         }
 
-        public List<UserPostsDto> GetPostsForUser(int id)
+        public List<UserPostsDto> GetProfilePosts(int userId, List<UserPostsDto> userPostsDto)
         {
-            var posts = _postsRepository.GetAllInclude();
-            
-            var postsForUser = posts.Where(x => x.UserId == id).OrderByDescending(x => x.Id).ToList();
+            var postsForProfile = _postsRepository.GetWhereInclude(x => x.UserId == userId).OrderByDescending(x => x.Id).ToList();
 
-            var userPostsDto = ModelToDTO.ConvertUserPostsToDTO(postsForUser);
+            if (postsForProfile == null)
+            {
+                throw new FlowException("Posts not found!");
+            }
+
+            userPostsDto = ModelToDTO.ConvertUserPostsToDTO(postsForProfile);
+
+            return userPostsDto;
+        }
+
+        public List<UserPostsDto> GetPostsForUser(List<int> usersId, List<UserPostsDto> userPostsDto)
+        {
+            var postsForUser = new List<Posts>();
+
+            foreach (var id in usersId)
+            {
+                postsForUser.AddRange(_postsRepository.GetWhereInclude(x => x.UserId == id).OrderByDescending(x => x.Id).ToList());
+            }
+
+            userPostsDto = ModelToDTO.ConvertUserPostsToDTO(postsForUser);
 
             if (postsForUser == null)
             {

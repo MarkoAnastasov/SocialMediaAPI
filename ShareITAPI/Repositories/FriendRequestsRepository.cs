@@ -11,17 +11,25 @@ namespace ShareITAPI.Repositories
 {
     public class FriendRequestsRepository : BaseRepository<FriendRequests>, IFriendRequestsRepository
     {
-        private readonly DB_A57889_shareITContext _context = new DB_A57889_shareITContext();
+        private readonly DB_A57889_shareITContext _context;
 
         public FriendRequestsRepository(DB_A57889_shareITContext context) : base(context)
         {
-
+            _context = context;
         }
 
-        public List<FriendRequests> GetAllInclude()
+        public FriendRequests GetFirstInclude(Func<FriendRequests, bool> predicate)
         {
             return _context.FriendRequests
                              .Include(x => x.FromUser)
+                             .FirstOrDefault(predicate);
+        }
+
+        public List<FriendRequests> GetWhereInclude(Func<FriendRequests, bool> predicate)
+        {
+            return _context.FriendRequests
+                             .Include(x => x.FromUser)
+                             .Where(predicate)
                              .ToList();
         }
     }

@@ -8,6 +8,8 @@ namespace ShareITAPI.Interfaces
 {
     public interface IPostsRepository : IBaseRepository<Posts>
     {
-        List<Posts> GetAllInclude();
+        Posts GetFirstInclude(Func<Posts, bool> predicate);
+
+        List<Posts> GetWhereInclude(Func<Posts, bool> predicate);
     }
 }

@@ -28,6 +28,16 @@ namespace ShareITAPI.Repositories
             return _context.Set<T>().ToList();
         }
 
+        public T GetFirstWhere(Func<T, bool> predicate)
+        {
+            return _context.Set<T>().FirstOrDefault(predicate);
+        }
+
+        public List<T> GetWhere(Func<T, bool> predicate)
+        {
+            return _context.Set<T>().Where(predicate).ToList();
+        }
+
         public T GetById(int id)
         {
             return _context.Set<T>().Find(id);

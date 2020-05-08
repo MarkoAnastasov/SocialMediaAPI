@@ -22,6 +22,40 @@ namespace ShareITAPI.Controllers
             _friendRequestsService = friendRequestsService;
         }
 
+        [HttpGet("{userid}")]
+        public ActionResult<IEnumerable<FriendRequestDto>> GetFriendRequests(int userId)
+        {
+            var friendRequests = new List<FriendRequestDto>();
+
+            try
+            {
+                friendRequests = _friendRequestsService.GetRequests(userId, friendRequests);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error has occured!Try again later!");
+            }
+
+            return Ok(friendRequests);
+        }
+
+        [HttpGet("{userid}/{targetId}")]
+        public ActionResult<FriendRequestDto> GetRequestForUser(int userId, int targetId)
+        {
+            var friendRequestDto = new FriendRequestDto();
+
+            try
+            {
+                friendRequestDto = _friendRequestsService.UserRequest(userId,targetId,friendRequestDto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error has occured!Try again later!");
+            }
+
+            return Ok(friendRequestDto);
+        }
+
         [HttpPost]
         public ActionResult SendRequest(SendRequestDto request)
         {
@@ -32,6 +66,44 @@ namespace ShareITAPI.Controllers
             catch (FlowException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error has occured!Try again later!");
+            }
+
+            return Ok();
+        }
+
+        [HttpPut("{userId}")]
+        public ActionResult SeenRequestsForUser(int userId)
+        {
+            try
+            {
+                _friendRequestsService.SeenRequests(userId);
+            }
+            catch (FlowException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error has occured!Try again later!");
+            }
+
+            return Ok();
+        }
+
+        [HttpDelete("{userid}/{targetId}")]
+        public ActionResult CancelRequest(int userId, int targetId)
+        {
+            try
+            {
+                _friendRequestsService.CancelFriendRequest(userId, targetId);
+            }
+            catch (FlowException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch (Exception)
             {

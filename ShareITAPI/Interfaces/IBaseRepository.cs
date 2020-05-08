@@ -12,6 +12,10 @@ namespace ShareITAPI.Interfaces
 
         List<T> GetAll();
 
+        T GetFirstWhere(Func<T, bool> predicate);
+
+        List<T> GetWhere(Func<T, bool> predicate);
+
         T GetById(int id);
 
         void Update(T entity);

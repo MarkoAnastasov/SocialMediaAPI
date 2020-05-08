@@ -29,7 +29,7 @@ namespace ShareITAPI.Controllers
 
             try
             {
-                post = _postsService.GetPostById(id);
+                post = _postsService.GetPostById(id, post);
             }
             catch (FlowException ex)
             {
@@ -44,13 +44,34 @@ namespace ShareITAPI.Controllers
         }
 
         [HttpGet("userid/{id}")]
-        public ActionResult<IEnumerable<UserPostsDto>> GetPostsForUser(int id)
+        public ActionResult<IEnumerable<UserPostsDto>> GetProfilePosts(int id)
         {
             var userPostsDto = new List<UserPostsDto>();
 
             try
             {
-                userPostsDto = _postsService.GetPostsForUser(id);
+                userPostsDto = _postsService.GetProfilePosts(id, userPostsDto);
+            }
+            catch (FlowException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error has occured!Try again later!");
+            }
+
+            return Ok(userPostsDto);
+        }
+
+        [HttpPost("usersid")]
+        public ActionResult<IEnumerable<UserPostsDto>> GetPostsForUser(List<int> usersId)
+        {
+            var userPostsDto = new List<UserPostsDto>();
+
+            try
+            {
+                userPostsDto = _postsService.GetPostsForUser(usersId, userPostsDto);
             }
             catch (FlowException ex)
             {

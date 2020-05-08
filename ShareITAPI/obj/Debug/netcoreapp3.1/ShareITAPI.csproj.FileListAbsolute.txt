@@ -143,6 +143,6 @@ C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\b
 C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\obj\Debug\netcoreapp3.1\ShareITAPI.csprojAssemblyReference.cache
 C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\obj\Debug\netcoreapp3.1\ShareITAPI.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\obj\Debug\netcoreapp3.1\ShareITAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\Marko\Code Academy\ShareIT\backend\ShareITAPI\ShareITAPI\obj\Debug\netcoreapp3.1\ShareITAPI.csprojAssemblyReference.cache
