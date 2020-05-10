@@ -9,9 +9,9 @@ namespace ShareITAPI.Interfaces.FriendsInterface
 {
     public interface IFriendsService
     {
-        List<FriendsDto> GetFriendsForUser(int userId, List<FriendsDto> friendsForUserDto);
+        List<FriendsDto> GetFriendsForUser(int userId);
 
-        FriendsDto CheckIfFriend(int userId, int targetId, FriendsDto friendDto);
+        FriendsDto CheckIfFriend(int userId, int targetId);
 
         void AcceptFriendRequest(AddFriendDto addFriend);
 

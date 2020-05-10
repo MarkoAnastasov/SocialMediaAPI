@@ -13,15 +13,15 @@ namespace ShareITAPI.Interfaces
     {
         List<UserDto> GetAll();
 
-        UserDto GetUserById(int id, UserDto targetUser);
+        UserDto GetUserById(int id);
 
         void RegisterUser(RegisterUserDto user);
 
         UserDto ReturnCreatedUser(RegisterUserDto user);
 
-        AccessToken UserLogin(string email , string password, AccessToken accessToken);
+        AccessToken UserLogin(string email , string password);
 
-        UserDto UserAccess(string token, string email, UserDto accessUserDto);
+        UserDto UserAccess(string token, string email);
 
         UpdateUserDto UpdateUser(UpdateUserDto user);
 

@@ -9,13 +9,13 @@ namespace ShareITAPI.Interfaces
 {
     public interface IPostsService
     {
-        Posts AddPost(PostDto postDto, Posts post);
+        Posts AddPost(PostDto postDto);
 
-        UserPostsDto GetPostById(int id, UserPostsDto postDto);
+        UserPostsDto GetPostById(int id);
 
-        List<UserPostsDto> GetProfilePosts(int userId, List<UserPostsDto> userPostsDto);
+        List<UserPostsDto> GetProfilePosts(int userId);
 
-        List<UserPostsDto> GetPostsForUser(List<int> usersId, List<UserPostsDto> userPostsDto);
+        List<UserPostsDto> GetPostsForUser(List<int> usersId);
 
         void DeletePost(int id);
     }
