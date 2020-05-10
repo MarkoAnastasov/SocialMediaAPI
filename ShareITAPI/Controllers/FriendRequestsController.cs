@@ -25,35 +25,31 @@ namespace ShareITAPI.Controllers
         [HttpGet("{userid}")]
         public ActionResult<IEnumerable<FriendRequestDto>> GetFriendRequests(int userId)
         {
-            var friendRequests = new List<FriendRequestDto>();
-
             try
             {
-                friendRequests = _friendRequestsService.GetRequests(userId, friendRequests);
+                var friendRequests = _friendRequestsService.GetRequests(userId);
+
+                return Ok(friendRequests);
             }
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(friendRequests);
         }
 
         [HttpGet("{userid}/{targetId}")]
         public ActionResult<FriendRequestDto> GetRequestForUser(int userId, int targetId)
         {
-            var friendRequestDto = new FriendRequestDto();
-
             try
             {
-                friendRequestDto = _friendRequestsService.UserRequest(userId,targetId,friendRequestDto);
+                var friendRequestDto = _friendRequestsService.UserRequest(userId,targetId);
+
+                return Ok(friendRequestDto);
             }
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(friendRequestDto);
         }
 
         [HttpPost]

@@ -20,20 +20,21 @@ namespace ShareITAPI.Services
             _friendRequestsRepository = friendRequestsRepository;
         }
 
-        public List<FriendRequestDto> GetRequests(int userId,List<FriendRequestDto> requestsForUserDto)
+        public List<FriendRequestDto> GetRequests(int userId)
         {
             var requestsForUser = _friendRequestsRepository.GetWhereInclude(x => x.UserId == userId).OrderByDescending(x => x.Id).ToList();
 
+            var requestsForUserDto = new List<FriendRequestDto>();
+
             foreach (var request in requestsForUser)
             {
-                var friendRequestDto = new FriendRequestDto();
-                requestsForUserDto.Add(ModelToDTO.ConvertRequestToDto(request, friendRequestDto));
+                requestsForUserDto.Add(ModelToDTO.ConvertRequestToDto(request));
             }
 
             return requestsForUserDto;
         }
 
-        public FriendRequestDto UserRequest(int userId, int targetId, FriendRequestDto friendRequestDto)
+        public FriendRequestDto UserRequest(int userId, int targetId)
         {
             var requestForUser = _friendRequestsRepository.GetFirstInclude(x => x.UserId == targetId && x.FromUserId == userId || (x.UserId == userId && x.FromUserId == targetId));
 
@@ -43,7 +44,7 @@ namespace ShareITAPI.Services
                 return friendRequestEmpty;
             }
 
-            return ModelToDTO.ConvertRequestToDto(requestForUser, friendRequestDto);
+            return ModelToDTO.ConvertRequestToDto(requestForUser);
         }
 
         public void SendRequest(SendRequestDto request)

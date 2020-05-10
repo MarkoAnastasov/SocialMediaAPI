@@ -20,22 +20,22 @@ namespace ShareITAPI.Services
             _friendsRepository = friendsRepository;
         }
 
-        public List<FriendsDto> GetFriendsForUser(int userId, List<FriendsDto> friendsForUserDto)
+        public List<FriendsDto> GetFriendsForUser(int userId)
         {
             var friendsForUser = _friendsRepository.GetWhereInclude(x => x.UserId == userId);
 
-            var friendDto = new FriendsDto();
+            var friendsForUserDto = new List<FriendsDto>();
 
             foreach (var friend in friendsForUser)
             {
-                friendDto = ModelToDTO.ConvertFriendToDto(friend, friendDto);
+                var friendDto = ModelToDTO.ConvertFriendToDto(friend);
                 friendsForUserDto.Add(friendDto);
             }
 
             return friendsForUserDto;
         }
 
-        public FriendsDto CheckIfFriend(int userId,int targetId,FriendsDto friendDto)
+        public FriendsDto CheckIfFriend(int userId,int targetId)
         {
             var checkIfFriends = _friendsRepository.GetFirstInclude(x => x.UserId == userId && x.FriendId == targetId);
 
@@ -45,7 +45,7 @@ namespace ShareITAPI.Services
                 return friendEmpty;
             }
 
-            return ModelToDTO.ConvertFriendToDto(checkIfFriends, friendDto);
+            return ModelToDTO.ConvertFriendToDto(checkIfFriends);
         }
 
         public void AcceptFriendRequest(AddFriendDto addFriend)

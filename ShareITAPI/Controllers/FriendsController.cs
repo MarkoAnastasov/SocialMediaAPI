@@ -24,11 +24,11 @@ namespace ShareITAPI.Controllers
         [HttpGet("{userid}")]
         public ActionResult<IEnumerable<FriendsDto>> GetFriendsForUser(int userId)
         {
-            var friendsDto = new List<FriendsDto>();
-
             try
             {
-                friendsDto = _friendsService.GetFriendsForUser(userId, friendsDto);
+                var friendsDto = _friendsService.GetFriendsForUser(userId);
+
+                return Ok(friendsDto);
             }
             catch (FlowException ex)
             {
@@ -38,25 +38,21 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(friendsDto);
         }
 
         [HttpGet("{userid}/{targetId}")]
         public ActionResult<FriendsDto> CheckFriend(int userId, int targetId)
         {
-            var friendDto = new FriendsDto();
-
             try
             {
-                friendDto = _friendsService.CheckIfFriend(userId, targetId, friendDto);
+                var friendDto = _friendsService.CheckIfFriend(userId, targetId);
+
+                return Ok(friendDto);
             }
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(friendDto);
         }
 
         [HttpPost]

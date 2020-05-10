@@ -94,8 +94,10 @@ namespace ShareITAPI.Converters
             return userToDto;
         }
 
-        public static FriendRequestDto ConvertRequestToDto(FriendRequests request,FriendRequestDto requestDto)
+        public static FriendRequestDto ConvertRequestToDto(FriendRequests request)
         {
+            var requestDto = new FriendRequestDto();
+
             requestDto.Id = request.Id;
             requestDto.FromUser = ConvertSingleUserToDto(request.FromUser);
             requestDto.ToUserId = request.UserId;
@@ -104,8 +106,10 @@ namespace ShareITAPI.Converters
             return requestDto;
         }
 
-        public static FriendsDto ConvertFriendToDto(Friends friend, FriendsDto friendDto)
+        public static FriendsDto ConvertFriendToDto(Friends friend)
         {
+            var friendDto = new FriendsDto();
+
             friendDto.UserId = friend.UserId;
             friendDto.Friend = ConvertSingleUserToDto(friend.Friend);
 

@@ -29,21 +29,23 @@ namespace ShareITAPI.Controllers
         public ActionResult<IEnumerable<UserDto>> GetAllUsers()
         {
             var users = _usersService.GetAll();
+
             if (users == null)
             {
                 return NotFound();
             }
+
             return Ok(users);
         }
 
         [HttpGet("{id}")]
         public ActionResult<UserDto> GetUserById(int id)
         {
-            var targetUser = new UserDto();
-
             try
             {
-                targetUser = _usersService.GetUserById(id, targetUser);
+                var targetUser = _usersService.GetUserById(id);
+
+                return Ok(targetUser);
             }
             catch (FlowException ex)
             {
@@ -53,18 +55,16 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(targetUser);
         }
 
         [HttpGet("{email}/{password}")]
         public ActionResult<AccessToken> UserLogin(string email, string password)
         {
-            var accessToken = new AccessToken();
-
             try
             {
-                accessToken = _usersService.UserLogin(email , password, accessToken);
+                var accessToken = _usersService.UserLogin(email , password);
+
+                return Ok(accessToken);
             }
             catch (FlowException ex)
             {
@@ -73,19 +73,17 @@ namespace ShareITAPI.Controllers
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
-            }
-
-            return Ok(accessToken);
+            } 
         }
 
         [HttpGet("access/{accessToken}/{email}")]
         public ActionResult<UserDto> GetByToken(string accessToken, string email)
         {
-            var userAccessDto = new UserDto();
-
             try
             {
-                userAccessDto = _usersService.UserAccess(accessToken, email, userAccessDto);
+                var userAccessDto = _usersService.UserAccess(accessToken, email);
+
+                return Ok(userAccessDto);
             }
             catch (FlowException ex)
             {
@@ -95,19 +93,17 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return userAccessDto;
         }
 
         [HttpPost]
         public ActionResult<UserDto> RegisterUser(RegisterUserDto user)
         {
-            var createdUser = new UserDto();
-
             try
             {
                 _usersService.RegisterUser(user);
-                createdUser = _usersService.ReturnCreatedUser(user);
+                var createdUser = _usersService.ReturnCreatedUser(user);
+
+                return CreatedAtAction("RegisterUser", createdUser);
             }
             catch (FlowException ex)
             {
@@ -117,8 +113,6 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return CreatedAtAction("RegisterUser", createdUser);
         }
 
         [HttpPut]

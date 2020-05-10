@@ -20,7 +20,7 @@ namespace ShareITAPI.Services
             _postsRepository = postsRepository;
         }
 
-        public Posts AddPost(PostDto postDto,Posts post)
+        public Posts AddPost(PostDto postDto)
         {
             if(postDto.PhotoUploaded.Length == 0)
             {
@@ -31,14 +31,15 @@ namespace ShareITAPI.Services
                 throw new FlowException("Description length must be max 100 chars!");
             }
 
-            post = DTOtoModel.PostDTOtoPost(postDto);
+            var post = DTOtoModel.PostDTOtoPost(postDto);
+
             _postsRepository.Add(post);
             _postsRepository.SaveEntities();
 
             return post;
         }
 
-        public UserPostsDto GetPostById(int id, UserPostsDto postDto)
+        public UserPostsDto GetPostById(int id)
         {
             var post = _postsRepository.GetFirstInclude(x => x.Id == id);
 
@@ -50,12 +51,11 @@ namespace ShareITAPI.Services
             }
 
             postList.Add(post);
-            postDto = ModelToDTO.ConvertUserPostsToDTO(postList).FirstOrDefault(x => x.Id == id);
 
-            return postDto;
+            return ModelToDTO.ConvertUserPostsToDTO(postList).FirstOrDefault(x => x.Id == id);
         }
 
-        public List<UserPostsDto> GetProfilePosts(int userId, List<UserPostsDto> userPostsDto)
+        public List<UserPostsDto> GetProfilePosts(int userId)
         {
             var postsForProfile = _postsRepository.GetWhereInclude(x => x.UserId == userId).OrderByDescending(x => x.Id).ToList();
 
@@ -64,28 +64,24 @@ namespace ShareITAPI.Services
                 throw new FlowException("Posts not found!");
             }
 
-            userPostsDto = ModelToDTO.ConvertUserPostsToDTO(postsForProfile);
-
-            return userPostsDto;
+            return ModelToDTO.ConvertUserPostsToDTO(postsForProfile);
         }
 
-        public List<UserPostsDto> GetPostsForUser(List<int> usersId, List<UserPostsDto> userPostsDto)
+        public List<UserPostsDto> GetPostsForUser(List<int> usersId)
         {
             var postsForUser = new List<Posts>();
-
-            foreach (var id in usersId)
-            {
-                postsForUser.AddRange(_postsRepository.GetWhereInclude(x => x.UserId == id).OrderByDescending(x => x.Id).ToList());
-            }
-
-            userPostsDto = ModelToDTO.ConvertUserPostsToDTO(postsForUser);
 
             if (postsForUser == null)
             {
                 throw new FlowException("Posts not found!");
             }
+
+            foreach (var id in usersId)
+            {
+                postsForUser.AddRange(_postsRepository.GetWhereInclude(x => x.UserId == id).OrderByDescending(x => x.Id).ToList());
+            }
             
-            return userPostsDto;
+            return ModelToDTO.ConvertUserPostsToDTO(postsForUser);
         }
 
         public void DeletePost(int id)

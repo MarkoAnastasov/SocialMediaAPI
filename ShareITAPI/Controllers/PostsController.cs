@@ -25,11 +25,11 @@ namespace ShareITAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<UserPostsDto> GetPostById(int id)
         {
-            var post = new UserPostsDto();
-
             try
             {
-                post = _postsService.GetPostById(id, post);
+                var post = _postsService.GetPostById(id);
+
+                return Ok(post);
             }
             catch (FlowException ex)
             {
@@ -38,19 +38,17 @@ namespace ShareITAPI.Controllers
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
-            }
-
-            return Ok(post);
+            }           
         }
 
         [HttpGet("userid/{id}")]
         public ActionResult<IEnumerable<UserPostsDto>> GetProfilePosts(int id)
         {
-            var userPostsDto = new List<UserPostsDto>();
-
             try
             {
-                userPostsDto = _postsService.GetProfilePosts(id, userPostsDto);
+                var userPostsDto = _postsService.GetProfilePosts(id);
+
+                return Ok(userPostsDto);
             }
             catch (FlowException ex)
             {
@@ -59,19 +57,17 @@ namespace ShareITAPI.Controllers
             catch (Exception)
             {
                 return StatusCode(500, "An error has occured!Try again later!");
-            }
-
-            return Ok(userPostsDto);
+            }            
         }
 
         [HttpPost("usersid")]
         public ActionResult<IEnumerable<UserPostsDto>> GetPostsForUser(List<int> usersId)
         {
-            var userPostsDto = new List<UserPostsDto>();
-
             try
             {
-                userPostsDto = _postsService.GetPostsForUser(usersId, userPostsDto);
+                var userPostsDto = _postsService.GetPostsForUser(usersId);
+
+                return Ok(userPostsDto);
             }
             catch (FlowException ex)
             {
@@ -81,18 +77,16 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return Ok(userPostsDto);
         }
 
         [HttpPost]
         public ActionResult<Posts> PostPhoto(PostDto post)
         {
-            var createdPost = new Posts();
-
             try
             {
-               createdPost = _postsService.AddPost(post,createdPost);
+                var createdPost = _postsService.AddPost(post);
+
+                return CreatedAtAction("PostPhoto", createdPost);
             }
             catch (FlowException ex)
             {
@@ -102,8 +96,6 @@ namespace ShareITAPI.Controllers
             {
                 return StatusCode(500, "An error has occured!Try again later!");
             }
-
-            return CreatedAtAction("PostPhoto", createdPost);
         }
 
         [HttpDelete("{id}")]

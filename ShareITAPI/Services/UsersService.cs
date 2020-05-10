@@ -28,7 +28,7 @@ namespace ShareITAPI.Services
             return ModelToDTO.ConvertUsersToDto(users);
         }
 
-        public UserDto GetUserById(int id,UserDto targetUser)
+        public UserDto GetUserById(int id)
         {
             var requestedUser = _usersRepository.GetById(id);
 
@@ -37,7 +37,7 @@ namespace ShareITAPI.Services
                 throw new FlowException("User not found!");
             }
 
-            targetUser = ModelToDTO.ConvertSingleUserToDto(requestedUser);
+            var targetUser = ModelToDTO.ConvertSingleUserToDto(requestedUser);
 
             return targetUser;
         }
@@ -70,7 +70,7 @@ namespace ShareITAPI.Services
             return createdUserDto;
         }
 
-        public AccessToken UserLogin(string email, string password, AccessToken accessToken)
+        public AccessToken UserLogin(string email, string password)
         {
             var requestedUser = _usersRepository.GetFirstWhere(x => x.Email.ToLower().Trim() == email.ToLower().Trim() && x.Password == password);
 
@@ -78,6 +78,8 @@ namespace ShareITAPI.Services
             {
                 throw new FlowException("Incorrect e-mail or password!");
             }
+
+            var accessToken = new AccessToken();
 
             accessToken.Value = GenerateAccessToken();
             requestedUser.AccessToken = accessToken.Value;
@@ -87,7 +89,7 @@ namespace ShareITAPI.Services
             return accessToken;
         }
 
-        public UserDto UserAccess(string token,string email, UserDto accessUserDto)
+        public UserDto UserAccess(string token,string email)
         {
             var requestedUser = _usersRepository.GetFirstWhere(x => x.AccessToken == token && x.Email == email);
             
@@ -98,7 +100,7 @@ namespace ShareITAPI.Services
 
             var usersList = new List<Users>() { requestedUser };
             var usersDto = ModelToDTO.ConvertUsersToDto(usersList);
-            accessUserDto = usersDto.FirstOrDefault(x => x.Id == requestedUser.Id);
+            var accessUserDto = usersDto.FirstOrDefault(x => x.Id == requestedUser.Id);
 
             return accessUserDto;
         }
