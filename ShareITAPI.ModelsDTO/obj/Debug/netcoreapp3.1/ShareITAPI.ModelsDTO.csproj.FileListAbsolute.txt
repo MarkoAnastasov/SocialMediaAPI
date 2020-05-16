@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.AssemblyInfo.cs
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\bin\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.deps.json
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\bin\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.dll
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\bin\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.pdb
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.dll
+C:\Users\User\Desktop\Marko\Code Academy\SocialMediaAPI\ShareITAPI.ModelsDTO\obj\Debug\netcoreapp3.1\ShareITAPI.ModelsDTO.pdb

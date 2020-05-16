@@ -1,0 +1,323 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Repositories\\ShareITAPI.Repositories.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\ShareITAPI.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\ShareITAPI.Common.csproj",
+        "projectName": "ShareITAPI.Common",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\ShareITAPI.Common.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\ShareITAPI.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\ShareITAPI.Interfaces.csproj",
+        "projectName": "ShareITAPI.Interfaces",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\ShareITAPI.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\ShareITAPI.Common.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Common\\ShareITAPI.Common.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj",
+        "projectName": "ShareITAPI.ModelsDTO",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\ShareITAPI.ModelsDTO.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.ModelsDTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj",
+        "projectName": "ShareITAPI.Models",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Repositories\\ShareITAPI.Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Repositories\\ShareITAPI.Repositories.csproj",
+        "projectName": "ShareITAPI.Repositories",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Repositories\\ShareITAPI.Repositories.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\ShareITAPI.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Interfaces\\ShareITAPI.Interfaces.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\SocialMediaAPI\\ShareITAPI.Models\\ShareITAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

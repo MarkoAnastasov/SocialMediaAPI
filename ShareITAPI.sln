@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI", "ShareITAPI\ShareITAPI.csproj", "{B97A5F36-4547-46DD-A21D-07451CE5D3F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareITAPI", "ShareITAPI\ShareITAPI.csproj", "{B97A5F36-4547-46DD-A21D-07451CE5D3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.Models", "ShareITAPI.Models\ShareITAPI.Models.csproj", "{75459F89-E9F2-4260-8D37-7304775D7927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.Repositories", "ShareITAPI.Repositories\ShareITAPI.Repositories.csproj", "{ACC466BE-0854-464C-9095-FAE23D076BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.Interfaces", "ShareITAPI.Interfaces\ShareITAPI.Interfaces.csproj", "{38958274-DA27-41B5-B7A2-8A52547D16CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.Services", "ShareITAPI.Services\ShareITAPI.Services.csproj", "{A2AD0BBE-ACFC-472D-8B93-B3D9E9249327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.Common", "ShareITAPI.Common\ShareITAPI.Common.csproj", "{D4FD8149-A9B7-4F72-A929-117BBC18B105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareITAPI.ModelsDTO", "ShareITAPI.ModelsDTO\ShareITAPI.ModelsDTO.csproj", "{00450BFE-1A5F-4E01-9BED-1B9509F63A49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{B97A5F36-4547-46DD-A21D-07451CE5D3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B97A5F36-4547-46DD-A21D-07451CE5D3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B97A5F36-4547-46DD-A21D-07451CE5D3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75459F89-E9F2-4260-8D37-7304775D7927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75459F89-E9F2-4260-8D37-7304775D7927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75459F89-E9F2-4260-8D37-7304775D7927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75459F89-E9F2-4260-8D37-7304775D7927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC466BE-0854-464C-9095-FAE23D076BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC466BE-0854-464C-9095-FAE23D076BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC466BE-0854-464C-9095-FAE23D076BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC466BE-0854-464C-9095-FAE23D076BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38958274-DA27-41B5-B7A2-8A52547D16CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38958274-DA27-41B5-B7A2-8A52547D16CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38958274-DA27-41B5-B7A2-8A52547D16CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38958274-DA27-41B5-B7A2-8A52547D16CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2AD0BBE-ACFC-472D-8B93-B3D9E9249327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AD0BBE-ACFC-472D-8B93-B3D9E9249327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AD0BBE-ACFC-472D-8B93-B3D9E9249327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AD0BBE-ACFC-472D-8B93-B3D9E9249327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FD8149-A9B7-4F72-A929-117BBC18B105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FD8149-A9B7-4F72-A929-117BBC18B105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FD8149-A9B7-4F72-A929-117BBC18B105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FD8149-A9B7-4F72-A929-117BBC18B105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00450BFE-1A5F-4E01-9BED-1B9509F63A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00450BFE-1A5F-4E01-9BED-1B9509F63A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00450BFE-1A5F-4E01-9BED-1B9509F63A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00450BFE-1A5F-4E01-9BED-1B9509F63A49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

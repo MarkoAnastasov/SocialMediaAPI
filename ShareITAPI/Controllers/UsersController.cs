@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShareITAPI.Common.Exceptions;
 using ShareITAPI.Helpers;
 using ShareITAPI.Interfaces;
-using ShareITAPI.Models;
 using ShareITAPI.ModelsDTO;
 using ShareITAPI.ModelsDTO.UsersDTO;
-using ShareITAPI.Services;
+using System;
+using System.Collections.Generic;
 
 namespace ShareITAPI.Controllers
 {
